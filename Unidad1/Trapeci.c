@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main(){
-    int espacios=6, asteriscos=1;
-    for(int i=6; i>=0;i--){
+    int espacios=6, asteriscos=3;
+    for(int i=3; i>=0;i--){
         for(int j=1;j<=espacios;j++){
             printf("%4s"," ");
         }
