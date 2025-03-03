@@ -5,7 +5,6 @@ int main(){
     printf("%s\n","b)Seleccionar opc 2");
     char opc;
     scanf("%c",&opc);
-
     switch (opc)
     {
     case 'a':

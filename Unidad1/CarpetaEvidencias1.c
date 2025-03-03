@@ -4,6 +4,7 @@ int main(){
     printf("%s\n","Carpeta de evidencias");
     printf("%s\n","Coronel Martinez Jose Antonio");
     printf("%s\n","Seleccione el programa que desea ver");
+
     printf("%s\n","a)Caracteres de escape");
     printf("%s\n","b)Tipos de datos");
     printf("%s\n","c)Promedio de calificacion");
@@ -20,6 +21,12 @@ int main(){
     printf("%s\n","n)Triangulo Equilatero o pino");
     printf("%s\n","o)Trapecio");
 
+    printf("%s\n","p) Promedio de calificaciones leer");
+    printf("%s\n","q)Tabla de multiplicar");
+    printf("%s\n","s)Prueba Switch");
+    printf("%s\n","r)Calculadora");
+    printf("%s\n","t)Prueba switch 2");
+    printf("%s\n","w)Volumen Figuras");
     char opc;
     scanf(" %c", &opc);  // Agregué un espacio antes de %c para evitar que lea el salto de línea previo
 
@@ -232,6 +239,156 @@ int main(){
                 asteriscos +=2;
                 printf("\n");
             }
+            break;
+        }
+
+        case 'p': {
+            float calf1=0,calf2=0,calf3=0;
+    float promedio;
+    printf("%s\n","Ingresa tu primera calificacion: ");
+    scanf("%f",&calf1);
+    printf("%s\n","Ingresa tu segunda calificacion: ");
+    scanf("%f",&calf2);
+    printf("%s\n","Ingresa tu tercera calificacion: ");
+    scanf("%f",&calf3);
+    promedio=(calf1+calf2+calf3)/3;
+    printf("%s%.2f\n","Su promedio es de: ",promedio);
+    return 0;
+            break;
+        }
+
+        case 'q': {
+            int tabla=0;
+    while(tabla<=10){
+        int num=0;
+        while(num<=10){
+            int mult=num*tabla;
+            printf("%s%d%s%d%s%d\n","(",tabla,")(",num,")=",mult);
+            num++;
+        }
+        tabla++;
+    }
+            break;
+        }
+
+
+        case 'r': {
+            int num1, num2, opc;
+            float operacion;
+            
+            printf("Dame tu primer numero:\n");
+            scanf("%d", &num1);
+            
+            printf("Dame tu segundo numero:\n");
+            scanf("%d", &num2);
+            
+            printf("Seleccione una opcion:\n");
+            printf("1._ Sumar\n");
+            printf("2._ Restar\n");
+            printf("3._ Multiplicar\n");
+            printf("4._ Division\n");
+            scanf("%d", &opc);
+            
+            switch (opc) {
+                case 1:
+                    printf("Se ha seleccionado suma\n");
+                    operacion = num1 + num2;
+                    printf("Su resultado es: %.2f\n", operacion);
+                    break;
+                
+                case 2:
+                    printf("Se ha seleccionado resta\n");
+                    operacion = num1 - num2;
+                    printf("Su resultado es: %.2f\n", operacion);
+                    break;
+                
+                case 3:
+                    printf("Se ha seleccionado multiplicacion\n");
+                    operacion = num1 * num2;
+                    printf("Su resultado es: %.2f\n", operacion);
+                    break;
+                
+                case 4:
+                    printf("Se ha seleccionado division\n");
+                    if (num2 != 0) {
+                        operacion = (float)num1 / num2;
+                        printf("Su resultado es: %.2f\n", operacion);
+                    } else {
+                        printf("Error: No se puede dividir entre cero.\n");
+                    }
+                    break;
+                
+                default:
+                    printf("No ha seleccionado una opcion valida\n");
+                    break;
+            }
+        break;
+    }
+              
+            break;
+        
+
+        case 't': {
+            printf("%s\n","Selecciona una opcion");
+            printf("%s\n","a)Seleccionar opc 1");
+            printf("%s\n","b)Seleccionar opc 2");
+            char opc;
+            scanf("%c",&opc);
+            switch (opc)
+            {
+            case 'a':
+                printf("%s\n","Selecciono opc1");
+                break;
+            
+            case 'b':
+                printf("%s\n","Selecciono opc2");
+                break;
+            
+            default:
+                break;
+            }
+            
+            break;
+        }
+        case 's': {
+            int opc;
+    printf("%s\n","Seleccione una opcion");
+    printf("%s\n","1._Sumar");
+    printf("%s\n","2._Restar");
+   scanf("%d",&opc);
+    switch (opc)
+    {
+    case 1:
+    printf("%s\n","Ha seleccionado suma");
+        break;
+
+    case 2:
+    printf("%s\n","Ha seleccionado resta");
+    break;
+    default:
+    printf("%s\n","No ha seleccionado una opcion valida");
+        break;
+    }
+            break;
+        }
+        
+
+        case 'w': {
+            double radio, altura, vEs,vCi,vCo;
+    float pi=3.1416;
+    
+    printf("%s","Ingresa el radio: ");
+    scanf("%lf", &radio);
+    printf("Ingresa la altura: ");
+    scanf("%lf", &altura);
+    
+    vEs = (4.0 / 3.0) * pi * radio * radio * radio;
+    vCi = pi * radio * radio * altura;
+    vCo = (1.0 / 3.0) * pi * radio * radio * altura;
+    
+    printf("\nVolumen de la esfera: %.2lf\n", vEs);
+    printf("Volumen del cilindro: %.2lf\n", vCi);
+    printf("Volumen del cono: %.2lf\n", vCo);
             break;
         }
 
