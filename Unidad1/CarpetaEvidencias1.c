@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <math.h>
-
 int main(){
     printf("%s\n","Carpeta de evidencias");
     printf("%s\n","Coronel Martinez Jose Antonio");
