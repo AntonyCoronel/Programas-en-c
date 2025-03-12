@@ -2,6 +2,7 @@
 int main(){
     int limitey=10;
     int contador=1;
+    
     while ((limitey>=1))
     {
         int limitex=10;

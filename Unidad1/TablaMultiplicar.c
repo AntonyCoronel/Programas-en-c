@@ -1,6 +1,7 @@
 #include <stdio.h>
 int main(){
     int tabla=0;
+    
     while(tabla<=10){
         int num=0;
         while(num<=10){

@@ -22,6 +22,7 @@ int main()
     for (int i = 0; i < size; i++)
     {
         printf("\nIngrese los datos de la computadora %d:\n", i + 1);
+        
         printf("Nombre: ");
         scanf("%s", arreglo[i].nombre);
 
