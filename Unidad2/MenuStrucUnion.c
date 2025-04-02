@@ -6,59 +6,70 @@
 
 typedef struct {
     char nombre[50];
-    int edad;
-} Persona;
-
-typedef struct {
-    char productos[50];
-    float precio;
-} Producto;
+    char raza[50];
+} Animal;
 
 typedef union {
-    Persona persona;
-    Producto producto;
+    Animal animal;
 } Dato;
 
 typedef struct {
     Dato valor;
-    int tipo;
+    int tipo; 
 } Celda;
 
 int main() {
     Celda matriz[FILAS][COLUMNAS];
 
- 
-    strcpy(matriz[0][0].valor.persona.nombre, "Roberto");
-    matriz[0][0].valor.persona.edad = 25;
-    matriz[0][0].tipo = 1;
+    printf("Ingresa los datos para la matriz de animales:\n");
 
-    strcpy(matriz[0][1].valor.persona.nombre, "Alejandro");
-    matriz[0][1].valor.persona.edad = 30;
-    matriz[0][1].tipo = 1;
+    for (int i = 0; i < FILAS; i++) {
+        for (int j = 0; j < COLUMNAS; j++) {
+            printf("\nCelda [%d][%d]:\n", i, j);
+            printf("Tipo de animal (1 = Perro, 2 = Gato): ");
+            scanf("%d", &matriz[i][j].tipo);
+
+            switch (matriz[i][j].tipo) {
+                case 1:
+                    printf("Ingresaste un Perro.\n");
+                    printf("Nombre: ");
+                    scanf("%s", matriz[i][j].valor.animal.nombre);
+
+                    printf("Raza: ");
+                    scanf("%s", matriz[i][j].valor.animal.raza);
+                    break;
+
+                case 2:
+                    printf("Ingresaste un Gato.\n");
+                    printf("Nombre: ");
+                    scanf("%s", matriz[i][j].valor.animal.nombre);
+
+                    printf("Raza: ");
+                    scanf("%s", matriz[i][j].valor.animal.raza);
+                    break;
+
+                default:
+                    printf("Tipo no válido. Se dejará vacío.\n");
+                    break;
+            }
+        }
+    }
 
 
-    strcpy(matriz[1][0].valor.producto.productos, "Conejo");
-    matriz[1][0].valor.producto.precio = 88.99;
-    matriz[1][0].tipo = 2;
-
-    strcpy(matriz[1][1].valor.producto.productos, "Golden");
-    matriz[1][1].valor.producto.precio = 1377.99;
-    matriz[1][1].tipo = 2;
-    
-
-    printf("Recorriendo la matriz de uniones con estructuras:\n");
-
+    printf("\nMostrando la matriz de animales:\n");
     for (int i = 0; i < FILAS; i++) {
         for (int j = 0; j < COLUMNAS; j++) {
             printf("Celda [%d][%d]: ", i, j);
             if (matriz[i][j].tipo == 1) {
-                printf("Persona - Nombre: %s, Edad: %d\n",
-                    matriz[i][j].valor.persona.nombre,
-                    matriz[i][j].valor.persona.edad);
+                printf("Perro - Nombre: %s, Raza: %s\n", 
+                    matriz[i][j].valor.animal.nombre, 
+                    matriz[i][j].valor.animal.raza);
             } else if (matriz[i][j].tipo == 2) {
-                printf("Producto - Nombre: %s, Precio: %.2f\n",
-                    matriz[i][j].valor.producto.productos,
-                    matriz[i][j].valor.producto.precio);
+                printf("Gato - Nombre: %s, Raza: %s\n", 
+                    matriz[i][j].valor.animal.nombre, 
+                    matriz[i][j].valor.animal.raza);
+            } else {
+                printf("No se ingresó un animal válido.\n");
             }
         }
     }
